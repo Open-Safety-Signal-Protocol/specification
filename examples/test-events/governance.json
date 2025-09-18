@@ -1,0 +1,18 @@
+{
+  "specversion": "1.0",
+  "id": "be9b5e43-0a6b-4a56-9c3e-2b5f1e7d9a20",
+  "source": "urn:mlops:deploy",
+  "type": "ai.governance.lifecycle.change",
+  "time": "2025-09-18T12:02:00Z",
+  "datacontenttype": "application/json",
+  "dataschema": "https://ossp.io/schema/v1.0.0/ai.governance.lifecycle.change.schema.json",
+  "data": {
+    "resource": {
+      "model_id": "claims-llm",
+      "environment": "staging",
+      "model_version": "sha256:abcd"
+    },
+    "change_type": "deployment",
+    "description": "Rolling out claims-llm v2025-09-18"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.experiment.run.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.experiment.run",
+  "type": "object",
+  "required": ["resource", "experiment_id", "variant", "stage"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "experiment_id": { "type": "string" },
+    "variant": { "type": "string" },
+    "stage": {
+      "type": "string",
+      "enum": ["start", "checkpoint", "end"]
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": {
+        "type": ["number", "string"]
+      }
+    }
+  },
+  "additionalProperties": true
+}

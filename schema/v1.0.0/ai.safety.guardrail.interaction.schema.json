@@ -1,0 +1,37 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.safety.guardrail.interaction.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.safety.guardrail.interaction",
+  "type": "object",
+  "required": ["resource", "action_taken", "reason"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "action_taken": {
+      "type": "string",
+      "enum": ["block", "modify", "flag"]
+    },
+    "reason": { "type": "string", "minLength": 1 },
+    "severity": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "guardrail_id": { "type": "string" },
+    "input_hash": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9:+-]{16,}$"
+    }
+  },
+  "additionalProperties": true
+}

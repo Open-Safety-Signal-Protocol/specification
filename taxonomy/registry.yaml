@@ -1,0 +1,22 @@
+types:
+  - id: ai.safety.guardrail.interaction
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.safety.guardrail.interaction.schema.json
+  - id: ai.safety.policy.violation
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.safety.policy.violation.schema.json
+  - id: ai.performance.drift.detected
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.performance.drift.detected.schema.json
+  - id: ai.governance.lifecycle.change
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.governance.lifecycle.change.schema.json
+  - id: ai.security.abuse.attempt
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.security.abuse.attempt.schema.json
+  - id: ai.dataset.access
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.dataset.access.schema.json
+  - id: ai.experiment.run
+    owner: ossp-wg
+    schema: schema/v1.0.0/ai.experiment.run.schema.json

@@ -1,0 +1,21 @@
+{
+  "specversion": "1.0",
+  "id": "c1b49728-7b4f-4a7e-9a2e-9d96e10b5c10",
+  "source": "urn:app:chatbot-prod",
+  "type": "ai.safety.guardrail.interaction",
+  "time": "2025-09-18T12:00:00Z",
+  "subject": "urn:model:gpt-4o",
+  "datacontenttype": "application/json",
+  "dataschema": "https://ossp.io/schema/v1.0.0/ai.safety.guardrail.interaction.schema.json",
+  "data": {
+    "resource": {
+      "model_id": "gpt-4o",
+      "environment": "production"
+    },
+    "action_taken": "block",
+    "reason": "Detected PII leakage.",
+    "severity": "high",
+    "guardrail_id": "pii-v2",
+    "input_hash": "hmac-sha256:abc123def456ghi7"
+  }
+}

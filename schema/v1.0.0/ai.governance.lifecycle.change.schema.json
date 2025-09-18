@@ -1,0 +1,30 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.governance.lifecycle.change.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.governance.lifecycle.change",
+  "type": "object",
+  "required": ["resource", "change_type", "description"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "change_type": {
+      "type": "string",
+      "enum": ["deployment", "rollback", "config_update"]
+    },
+    "description": { "type": "string" },
+    "approver": { "type": "string" },
+    "change_request_id": { "type": "string" }
+  },
+  "additionalProperties": true
+}

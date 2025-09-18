@@ -1,0 +1,30 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.performance.drift.detected.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.performance.drift.detected",
+  "type": "object",
+  "required": ["resource", "drift_type", "metric_name", "value", "threshold"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "drift_type": {
+      "type": "string",
+      "enum": ["concept", "feature", "prediction"]
+    },
+    "metric_name": { "type": "string" },
+    "value": { "type": "number" },
+    "threshold": { "type": "number" }
+  },
+  "additionalProperties": true
+}

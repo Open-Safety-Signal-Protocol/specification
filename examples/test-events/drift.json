@@ -1,0 +1,19 @@
+{
+  "specversion": "1.0",
+  "id": "4b1f07e9-2d0f-4d52-9c5d-1c6b08f2a9c1",
+  "source": "urn:svc:ranking",
+  "type": "ai.performance.drift.detected",
+  "time": "2025-09-18T12:01:00Z",
+  "datacontenttype": "application/json",
+  "dataschema": "https://ossp.io/schema/v1.0.0/ai.performance.drift.detected.schema.json",
+  "data": {
+    "resource": {
+      "model_id": "reranker-v3",
+      "environment": "production"
+    },
+    "drift_type": "prediction",
+    "metric_name": "PSI",
+    "value": 0.32,
+    "threshold": 0.2
+  }
+}

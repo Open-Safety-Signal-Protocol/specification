@@ -1,0 +1,29 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.dataset.access.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.dataset.access",
+  "type": "object",
+  "required": ["resource", "dataset_id", "access_type"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "dataset_id": { "type": "string" },
+    "access_type": {
+      "type": "string",
+      "enum": ["training_read", "inference_read", "evaluation_read"]
+    },
+    "purpose": { "type": "string" }
+  },
+  "additionalProperties": true
+}

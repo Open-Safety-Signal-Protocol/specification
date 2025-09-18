@@ -1,0 +1,31 @@
+{
+  "$id": "https://ossp.io/schema/v1.0.0/ai.safety.policy.violation.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OSSP ai.safety.policy.violation",
+  "type": "object",
+  "required": ["resource", "policy_id", "violation_type", "decision"],
+  "properties": {
+    "resource": {
+      "type": "object",
+      "required": ["model_id", "environment"],
+      "properties": {
+        "model_id": { "type": "string" },
+        "model_version": { "type": "string" },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      },
+      "additionalProperties": true
+    },
+    "policy_id": { "type": "string" },
+    "violation_type": { "type": "string" },
+    "decision": {
+      "type": "string",
+      "enum": ["allowed", "blocked", "overruled"]
+    },
+    "approver": { "type": "string" },
+    "reason": { "type": "string" }
+  },
+  "additionalProperties": true
+}

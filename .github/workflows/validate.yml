@@ -1,0 +1,28 @@
+name: Validate OSSP Events
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm i -g ajv-cli
+      - run: |
+          ajv validate \
+            -s schema/v1.0.0/ai.safety.guardrail.interaction.schema.json \
+            -d examples/test-events/guardrail.json \
+            --strict=false
+          ajv validate \
+            -s schema/v1.0.0/ai.performance.drift.detected.schema.json \
+            -d examples/test-events/drift.json \
+            --strict=false
+          ajv validate \
+            -s schema/v1.0.0/ai.governance.lifecycle.change.schema.json \
+            -d examples/test-events/governance.json \
+            --strict=false

@@ -1,0 +1,10 @@
+{
+  "resource": {
+    "model_id": "reranker-v3",
+    "environment": "production"
+  },
+  "drift_type": "prediction",
+  "metric_name": "PSI",
+  "value": 0.32,
+  "threshold": 0.2
+}

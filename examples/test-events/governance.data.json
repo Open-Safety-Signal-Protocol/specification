@@ -1,0 +1,9 @@
+{
+  "resource": {
+    "model_id": "claims-llm",
+    "environment": "staging",
+    "model_version": "sha256:abcd"
+  },
+  "change_type": "deployment",
+  "description": "Rolling out claims-llm v2025-09-18"
+}

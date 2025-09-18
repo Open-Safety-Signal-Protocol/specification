@@ -1,0 +1,12 @@
+{
+  "name": "ossp-specification",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "validate": "node scripts/validate.js"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

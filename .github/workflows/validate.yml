@@ -9,26 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: npm i -g ajv-cli@5.0.0
-      - run: |
-          set -euo pipefail
-          META_FLAGS="-m schema/meta/2020-12/schema.json \
-            -m schema/meta/2020-12/meta/applicator.json \
-            -m schema/meta/2020-12/meta/content.json \
-            -m schema/meta/2020-12/meta/core.json \
-            -m schema/meta/2020-12/meta/format-annotation.json \
-            -m schema/meta/2020-12/meta/meta-data.json \
-            -m schema/meta/2020-12/meta/unevaluated.json \
-            -m schema/meta/2020-12/meta/validation.json"
-
-          ajv validate --spec=draft2020 --strict=false $META_FLAGS \
-            -s schema/v1.0.0/ai.safety.guardrail.interaction.schema.json \
-            -d examples/test-events/guardrail.json
-
-          ajv validate --spec=draft2020 --strict=false $META_FLAGS \
-            -s schema/v1.0.0/ai.performance.drift.detected.schema.json \
-            -d examples/test-events/drift.json
-
-          ajv validate --spec=draft2020 --strict=false $META_FLAGS \
-            -s schema/v1.0.0/ai.governance.lifecycle.change.schema.json \
-            -d examples/test-events/governance.json
+      - name: Install validators
+        run: npm install ajv@8 ajv-formats@3
+      - name: Validate sample events
+        run: node scripts/validate.js

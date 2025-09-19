@@ -1,0 +1,6 @@
+{
+  "resource": { "model_id": "reranker-v3", "environment": "production" },
+  "dataset_id": "s3://datasets/credit/2025-09-01",
+  "access_type": "inference_read",
+  "purpose": "serve-topk"
+}

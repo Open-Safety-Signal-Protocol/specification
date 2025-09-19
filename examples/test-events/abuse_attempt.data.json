@@ -1,0 +1,7 @@
+{
+  "resource": { "model_id": "gpt-4o", "environment": "production" },
+  "vector": "prompt_injection",
+  "detector_id": "pi-detector-v1",
+  "confidence": 0.87,
+  "sample_id": "sample-123"
+}

@@ -28,7 +28,15 @@ const cases = [
   {
     schema: 'schema/v1.0.0/ai.governance.lifecycle.change.schema.json',
     data: 'examples/test-events/governance.data.json'
-  }
+  },
+  { schema: 'schema/v1.0.0/ai.dataset.access.schema.json',
+    data: 'examples/test-events/dataset_access.data.json' },
+  { schema: 'schema/v1.0.0/ai.experiment.run.schema.json',
+    data: 'examples/test-events/experiment_run.data.json' },
+  { schema: 'schema/v1.0.0/ai.safety.policy.violation.schema.json',
+    data: 'examples/test-events/policy_violation.data.json' },
+  { schema: 'schema/v1.0.0/ai.security.abuse.attempt.schema.json',
+    data: 'examples/test-events/abuse_attempt.data.json' }
 ].map(({ schema, data }) => ({
   schema: path.join(repoRoot, schema),
   data: path.join(repoRoot, data)

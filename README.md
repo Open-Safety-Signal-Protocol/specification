@@ -23,6 +23,7 @@ OSSP defines how AI systems emit **governance, safety, and risk** signals. Built
   "time": "2025-09-18T14:23:54Z",
   "subject": "urn:model:gpt-4o",
   "datacontenttype": "application/json",
+  "dataschema": "https://ossp.io/schema/v1.0.0/ai.safety.guardrail.interaction.schema.json",
   "data": {
     "resource": {
       "model_id": "gpt-4o",

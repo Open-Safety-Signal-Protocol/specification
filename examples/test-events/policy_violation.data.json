@@ -1,0 +1,8 @@
+{
+  "resource": { "model_id": "gpt-4o", "environment": "production" },
+  "policy_id": "safety-pii-v2",
+  "violation_type": "unsafe_content",
+  "decision": "overruled",
+  "approver": "oncall_swe",
+  "reason": "false positive"
+}

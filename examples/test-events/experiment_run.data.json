@@ -1,0 +1,7 @@
+{
+  "resource": { "model_id": "reranker-v3", "environment": "staging" },
+  "experiment_id": "exp-2025-09-18A",
+  "variant": "B",
+  "stage": "start",
+  "metrics": { "baseline_acc": 0.91, "note": "kickoff" }
+}
